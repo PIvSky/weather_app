@@ -1,4 +1,4 @@
-const key = 'uT77Pi0v2yFT0Oe3cbhPWRIlDcp5HZ3Z';
+const key = 'ySZSFyK6qGFj5DARYo2kZj6PdsWrINN3';
 
 // getting weather information
 const getWeather = async (id) => {
@@ -6,11 +6,11 @@ const getWeather = async (id) => {
     const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
     const query = `${id}?apiKey${key}`;
 
-    const response = await fetch(base + query);
+    const response = await fetch(base + query) ;
     const data = await response.json();
+    // it returns a promise
 
     return data[0];
-
 }
 
 
