@@ -4,10 +4,9 @@ const details = document.querySelector('.details');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
 
-
 const updateUI = (data) => {
 
-    const { cityDets, weather} = data;
+    const { cityDets, weather } = data;
 
     // update details template
     details.innerHTML = `
@@ -23,26 +22,24 @@ const updateUI = (data) => {
     const iconSrc = `icons/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 
-    let timeSrc = weather.IsDayTime ? 'icons/day.svg' : 'icons/night.svg';
-
+    const timeSrc = weather.IsDayTime ? 'icons/day.svg' : 'icons/night.svg';
     time.setAttribute('src', timeSrc);
 
     // remove the d-none class if present
     if(card.classList.contains('d-none')){
-        card.classList.remove('d-nonoe');
-    };
+        card.classList.remove('d-none');
+    }
 };
 
 const updateCity = async (city) => {
 
     const cityDets = await getCity(city);
     const weather = await getWeather(cityDets.Key);
+    return { cityDets, weather };
 
-    return { cityDets, weather};
 };
 
 cityForm.addEventListener('submit', e => {
-
     // prevent default action
     e.preventDefault();
 
@@ -57,6 +54,7 @@ cityForm.addEventListener('submit', e => {
 
     // set local storage
     localStorage.setItem('city', city);
+    
 });
 
 if(localStorage.getItem('city')) {
