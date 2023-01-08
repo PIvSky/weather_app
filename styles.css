@@ -13,3 +13,11 @@ body{
   width: 100px;
   margin-bottom: -50px;
 }
+input {
+  /* color: rgb(189, 189, 165); */
+}
+::-webkit-input-placeholder {
+  text-align: center;
+  font-style: italic;
+  color: rgb(255, 60, 0);
+}
