@@ -35,6 +35,8 @@ const updateCity = async (city) => {
 
     const cityDets = await getCity(city);
     const weather = await getWeather(cityDets.Key);
+
+    // console.log(cityDets, weather)
     return { cityDets, weather };
 
 };
@@ -52,7 +54,7 @@ cityForm.addEventListener('submit', e => {
         .then(data => updateUI(data))
         .catch(err => console.log(err));
 
-    // set local storage
+        // set local storage
     localStorage.setItem('city', city);
     
 });
