@@ -17,7 +17,6 @@ const updateUI = (data) => {
     
     // decontructing properties - tworzy zmienne w krótszy sposób
     const {cityDets, weather} = data;
-    console.log(cityDets);
 
     //  to kody dodający html do <div> z 28 linijki html
     details.innerHTML = `
@@ -66,8 +65,6 @@ const updateCity = async (city) => {
     const weather = await getWeather(cityDets.Key);
     // ta zmienna czerpie ze zmiennej cityDets;
     // czeka na wykonanie getCity
-    // ale co to jest ten key z cityDets.Key ???
-    // key to key miasta? aby móc pobrać weather tego konkretnego miasta
 
     return { cityDets, weather};
     // zwraca obiekt
@@ -78,7 +75,9 @@ const updateCity = async (city) => {
     // to dłuższa wersja tego returna, w obiekcie są property i value
     // value zmienne cityDets i weather
     //  kiedy property i value są takie same, można to właśnie tak skrócić
-    // czemu musimy zwrócić obiekt??
+
+    // jeżeli funkcja ma zwrócić dwa niezależne elementy, z dwóch różnych requestów
+    // to muszę zwrócić to jako obiekt!!
 };
 
 cityForm.addEventListener('submit', e => {

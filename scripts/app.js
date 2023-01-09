@@ -36,7 +36,7 @@ const updateCity = async (city) => {
     const cityDets = await getCity(city);
     const weather = await getWeather(cityDets.Key);
 
-    // console.log(cityDets, weather)
+    console.log(cityDets, weather)
     return { cityDets, weather };
 
 };
