@@ -2,8 +2,10 @@
 This is my 3rd project which is part of **Modern JS Course by NetNinja.** Project is concentrated on API and Async JS. I made project in **Vanilla JavaScript.**
 
 #Developer environment
+
 To run this descopt application I can recommend:
 - VS Code
+
 Extentions you should have to run my app in browser is:
 - Live Server
 
